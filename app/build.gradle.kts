@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.myapplication"
+    namespace = "com.example.ratefilm"
     compileSdk = 35
 
     defaultConfig {
