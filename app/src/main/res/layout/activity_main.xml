@@ -33,7 +33,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav" />
-    <ProgressBar
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

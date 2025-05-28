@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.Recycler
+import androidx.transition.Visibility
 import androidx.viewpager2.widget.ViewPager2
 import com.example.ratefilm.R
 import com.example.ratefilm.adapter.BaseMovieAdapter
@@ -108,11 +109,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         movies: MutableLiveData<Resource<MovieResponse>>,
         adapter: BaseMovieAdapter
     ) {
+
         movies.observe(viewLifecycleOwner) { response ->
             when (response) {
                 is Resource.Success<*> -> {
+                    binding.homeFragmentLayout.visibility = View.VISIBLE
+                    binding.homeFragmentProgressbar.visibility = View.GONE
                     response.data?.let { movieResponse ->
-                        if (movieResponse.results?.isNotEmpty() == true) {
+                        if (movieResponse.results.isNotEmpty() == true) {
                             adapter.differ.submitList(movieResponse.results.toList())
                         } else {
                             Toast.makeText(context, "No movies available", Toast.LENGTH_SHORT)
@@ -131,7 +135,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 }
 
                 is Resource.Loading<*> -> {
-                    Toast.makeText(context, "Loading", Toast.LENGTH_SHORT).show()
+                    binding.homeFragmentLayout.visibility = View.GONE
+                    binding.homeFragmentProgressbar.visibility = View.VISIBLE
                 }
             }
         }
