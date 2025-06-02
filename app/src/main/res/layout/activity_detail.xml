@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activitys.DetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/detail_activity_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- Nội dung chi tiết phim (giữ nguyên như cũ) -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp">
+                    <ImageView
+                        android:id="@+id/detailBack"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_back"
+                        android:layout_margin="10dp"/>
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_favorite"
+                        android:layout_gravity="right"
+                        android:layout_margin="10dp"/>
+
+                    <ImageView
+                        android:id="@+id/detail_poster"
+                        android:layout_width="match_parent"
+                        android:layout_height="500dp"
+                        android:adjustViewBounds="true"
+                        android:alpha="0.8"
+                        android:scaleType="centerCrop"
+                        android:src="@color/black" />
+                </FrameLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <!-- Các TextView, ImageView... giữ nguyên -->
+
+                    <TextView
+                        android:id="@+id/detail_title"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/righteous"
+                        android:text="Title"
+                        android:textColor="@color/primary_color"
+                        android:textSize="35sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/detail_star"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4.5"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.096"
+                        app:layout_constraintStart_toEndOf="@+id/detail_title"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_star"
+                        app:layout_constraintBottom_toBottomOf="@+id/detail_star"
+                        app:layout_constraintStart_toEndOf="@+id/detail_star"
+                        app:layout_constraintTop_toTopOf="@+id/detail_star" />
+
+                    <TextView
+                        android:id="@+id/detail_director_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/righteous"
+                        android:text="Đạo diễn:"
+                        android:textColor="@color/primary_color"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/detail_title"
+                        app:layout_constraintTop_toBottomOf="@+id/detail_title"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/detail_actors_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/righteous"
+                        android:text="Diễn viên:"
+                        android:textColor="@color/primary_color"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/detail_title"
+                        app:layout_constraintTop_toTopOf="@+id/detail_actors"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/detail_genres_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/righteous"
+                        android:text="Thể loại:"
+                        android:textColor="@color/primary_color"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/detail_title"
+                        app:layout_constraintTop_toTopOf="@+id/detail_genres"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/detail_duration_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/righteous"
+                        android:text="Thời lượng:"
+                        android:textColor="@color/primary_color"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/detail_title"
+                        app:layout_constraintTop_toTopOf="@+id/detail_duration"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/detail_director"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:fontFamily="@font/righteous"
+                        android:text="Victor"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/detail_director_title"
+                        app:layout_constraintTop_toTopOf="@+id/detail_director_title" />
+
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/detail_actors"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/righteous"
+                        android:text="Victor, Bảo Khanh"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/detail_director"
+                        app:layout_constraintTop_toBottomOf="@+id/detail_director" />
+
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/detail_genres"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:fontFamily="@font/righteous"
+                        android:text="Hành động, Hài hước"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/detail_director_title"
+                        app:layout_constraintTop_toBottomOf="@+id/detail_actors" />
+
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/detail_duration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:fontFamily="@font/righteous"
+                        android:text="180 phút"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/detail_director_title"
+                        app:layout_constraintTop_toBottomOf="@+id/detail_genres" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Đánh giá"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/righteous"
+                    android:layout_margin="10dp"/>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/recycler_border"
+                    android:layout_margin="10dp"
+                    >
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/detail_review_layout"
+                        android:layout_width="match_parent"
+
+                        android:layout_height="200dp">
+
+
+                    </androidx.recyclerview.widget.RecyclerView>
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/detailActivity_progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center" />
+
+</FrameLayout>
